@@ -1,3 +1,4 @@
+import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NgModule } from '@angular/core';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import vi from '@angular/common/locales/ja';
@@ -14,7 +15,8 @@ const MODULES: any[] = [
   IconsProviderModule,
   FormsModule,
   ReactiveFormsModule,
-  HttpClientModule
+  HttpClientModule,
+  NzSelectModule
 ];
 
 // Contains all shared components
