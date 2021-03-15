@@ -1,0 +1,5 @@
+#app-edit-film {
+  .h-16-9 {
+    height: calc(((100vw - 240px) / 12 * 7) / 16 * 9);
+  }
+}

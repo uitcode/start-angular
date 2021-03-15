@@ -1,1 +1,13 @@
-<p>main-layout works!</p>
+<div class="main-layout h-screen flex flex-col">
+  <div class="h-14">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="flex flex-grow overflow-auto">
+    <div class="w-60">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="flex-grow overflow-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

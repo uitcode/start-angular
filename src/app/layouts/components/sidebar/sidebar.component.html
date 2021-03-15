@@ -1,0 +1,33 @@
+<section id="app-sidebar" class="w-full h-full bg-white border-r border-gray-100 p-2 relative">
+  <div class="navigation" [class.opacity-0]="loadAnimation">
+    <nz-collapse nzGhost nzExpandIconPosition="right" class="absolute w-56 z-10">
+      <nz-collapse-panel
+        #p
+        *ngFor="let navigation of navigations"
+        [nzHeader]="navigation.title"
+        [nzActive]="true"
+        [class.mb-3]="!p?.nzActive"
+      >
+        <ul class="animation">
+          <li
+            *ngFor="let level1 of navigation.child; let i = index"
+            [routerLink]="level1.url"
+            [class]="'item-' + i"
+            [class.hidden]="!p.nzActive"
+            [class.bg-violet-50]="level1.active"
+            [class.text-purpleGray-300]="level1.active"
+            class="flex items-center py-2 mb-1 text-purpleGray-200 hover:text-purpleGray-300 font-semibold cursor-pointer hover:bg-violet-50 rounded outline-none"
+          >
+            <i nz-icon [nzType]="level1.icon" nzTheme="outline" class="mx-3 text-base"></i>
+            {{ level1.title }}
+          </li>
+        </ul>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </div>
+  <app-loading
+    *ngIf="loadAnimation"
+    [color]="'#EDE9FE'"
+    class="absolute transformXY-50 top-1/2 left-1/2"
+  ></app-loading>
+</section>

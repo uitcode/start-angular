@@ -1,0 +1,41 @@
+@import 'variables';
+
+#app-sidebar {
+  .ant-collapse-header {
+    @apply uppercase text-xs font-semibold text-purpleGray-100 pl-5 pb-0;
+
+    .ant-collapse-arrow {
+      @apply text-tiny top-0.5;
+    }
+  }
+
+  .ant-collapse-content-box {
+    @apply px-2 py-2;
+  }
+
+  .animation {
+    @for $i from 0 through 3 {
+      .item-#{$i} {
+        transform-origin: top center;
+        animation: translateX 300ms ($i * 60ms) ease-in-out forwards;
+        transition: .5s ease;
+      }
+    }
+  }
+
+  @keyframes translateX {
+    0% {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+
+    80% {
+      transform: translateX(-5px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+}

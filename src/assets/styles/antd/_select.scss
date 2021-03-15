@@ -11,6 +11,10 @@
     @apply -mt-2;
   }
 
+  .ant-select-arrow {
+    @apply top-1/2;
+  }
+
   .ant-select-selection-item-remove {
     @apply items-center flex;
   }
@@ -35,5 +39,11 @@
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled)
     .ant-select-item-option-state {
     @apply text-purple-300;
+  }
+
+  .option-loading {
+    .ant-select-item-option-content {
+      @apply items-center flex;
+    }
   }
 }
