@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // ant design
 import { vi_VN, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { HttpClientModule } from '@angular/common/http';
+import { DataModule } from '@app/data/data.module';
+import { environment } from '@env';
 
 // Contains all shared modules
 const MODULES: any[] = [
@@ -16,7 +18,8 @@ const MODULES: any[] = [
   FormsModule,
   ReactiveFormsModule,
   HttpClientModule,
-  NzSelectModule
+  NzSelectModule,
+  DataModule.forRoot({ url: environment.apiUrl })
 ];
 
 // Contains all shared components

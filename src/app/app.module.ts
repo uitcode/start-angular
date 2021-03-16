@@ -10,6 +10,8 @@ import {
 import { LayoutsModule } from './layouts/layouts.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MockDatabaseService } from './data/data.mock.';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     NoopAnimationsModule,
     BrowserAnimationsModule,
     LayoutsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(MockDatabaseService, { delay: 100 })
   ],
   providers: [],
   bootstrap: [AppComponent]
