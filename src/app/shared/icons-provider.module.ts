@@ -12,7 +12,8 @@ import {
   IdcardOutline,
   VideoCameraOutline,
   PlayCircleOutline,
-  ControlOutline
+  ControlOutline,
+  HeartFill
 } from '@ant-design/icons-angular/icons';
 
 const icons = [
@@ -26,7 +27,8 @@ const icons = [
   IdcardOutline,
   VideoCameraOutline,
   PlayCircleOutline,
-  ControlOutline
+  ControlOutline,
+  HeartFill
 ];
 
 @NgModule({

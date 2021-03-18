@@ -3,17 +3,17 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class MockDatabaseService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 0, name: 'Zero' },
-      { id: 11, name: 'Mr. Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
+      { name: 0, value: 'Lừa đểu gặp lừa đảo' },
+      { name: 11, value: 'Sisyphus' },
+      { name: 12, value: 'Trở lại tuổi 18' },
+      { name: 13, value: 'Thế giới ma quái' },
+      { name: 14, value: 'Nghệ thuật săn quỷ và nấu mì' },
+      { name: 15, value: 'Cảnh báo tình yêu' },
+      { name: 16, value: 'Mị nguyệt truyện' },
+      { name: 17, value: 'Chuyến tàu băng giá' },
+      { name: 18, value: 'Phụ lục tình yêu' },
+      { name: 19, value: 'Hạ cánh nơi anh' },
+      { name: 20, value: 'Fast and furious 8' }
     ];
 
     const duy = [{ name: 'Duc Duy', age: 22 }];
