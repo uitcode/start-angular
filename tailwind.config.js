@@ -32,7 +32,8 @@ module.exports = isProd => ({
       purpleGray: {
         100: 'rgb(180, 184, 210)',
         200: 'rgb(93, 101, 152)',
-        300: 'rgb(64, 70, 104)'
+        300: 'rgb(64, 70, 104)',
+        500: 'rgb(85, 33, 181)'
       },
       red: colors.red,
       orange: colors.orange,

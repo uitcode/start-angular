@@ -10,6 +10,7 @@ import { vi_VN, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { HttpClientModule } from '@angular/common/http';
 import { DataModule } from '@app/data/data.module';
 import { environment } from '@env';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 // Contains all shared modules
 const MODULES: any[] = [
@@ -19,7 +20,9 @@ const MODULES: any[] = [
   ReactiveFormsModule,
   HttpClientModule,
   NzSelectModule,
-  DataModule.forRoot({ url: environment.apiUrl })
+  DataModule.forRoot({ url: environment.apiUrl }),
+
+  NzButtonModule
 ];
 
 // Contains all shared components

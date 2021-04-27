@@ -1,9 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import '~ng-zorro-antd/style/index.min.css';
-@import '~ng-zorro-antd/select/style/index.min.css';
-@import '~ng-zorro-antd/collapse/style/index.min.css';
+// @import '~ng-zorro-antd/style/index.min.css';
+// @import '~ng-zorro-antd/select/style/index.min.css';
+// @import '~ng-zorro-antd/collapse/style/index.min.css';
 @import 'custom';
 @import 'font-open-sans';
 
@@ -32,7 +32,7 @@ a:hover {
 ::-webkit-scrollbar {
   width: 6px;
   display: block;
-  background-color: rgb(238, 238, 238);
+  @apply bg-purpleGray-500;
 }
 
 // ::-webkit-scrollbar-corner {
@@ -40,7 +40,7 @@ a:hover {
 // }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-purple-300 rounded shadow-none;
+  @apply bg-purpleGray-500 rounded shadow-none;
 }
 
 ::-webkit-scrollbar-track {
@@ -50,4 +50,12 @@ a:hover {
 
 .transformXY-50 {
   transform: translate(-50%, -50%);
+}
+
+.transformX-50 {
+  transform: translateX(-50%);
+}
+
+.transformY-50 {
+  transform: translateY(-50%);
 }
