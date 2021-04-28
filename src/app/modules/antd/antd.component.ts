@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { CropperComponent } from 'angular-cropperjs';
 
 @Component({
   selector: 'app-antd',
@@ -8,6 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AntdComponent implements OnInit {
+  @ViewChild('angularCropper') public angularCropper: CropperComponent;
   title = 'start';
   selectedValue = null;
   listOfOption: string[] = [];
@@ -17,6 +19,11 @@ export class AntdComponent implements OnInit {
   listOfItem = ['jack', 'lucy'];
   index = 0;
   nzFilterOption = () => true;
+  imageUrl: string = 'assets/images/cat.jpg';
+  config: any = {
+    viewMode: 2,
+    zoom: 2
+  };
 
   constructor(private httpClient: HttpClient) {}
 
@@ -51,5 +58,11 @@ export class AntdComponent implements OnInit {
     if (this.listOfItem.indexOf(value) === -1) {
       this.listOfItem = [...this.listOfItem, input.value || `New item ${this.index++}`];
     }
+  }
+
+  zoom() {
+    console.log(this.angularCropper);
+
+    this.angularCropper.cropper.zoom(3);
   }
 }

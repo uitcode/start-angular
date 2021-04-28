@@ -5,9 +5,10 @@ import { SharedModule } from '@shared/shared.module';
 import { AntdRoutingModule } from './antd.routing';
 import { RouterModule } from '@angular/router';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { AngularCropperjsModule } from 'angular-cropperjs';
 
 @NgModule({
   declarations: [AntdComponent],
-  imports: [CommonModule, SharedModule, AntdRoutingModule, NzDropDownModule]
+  imports: [CommonModule, SharedModule, AntdRoutingModule, NzDropDownModule, AngularCropperjsModule]
 })
 export class AntdModule {}
