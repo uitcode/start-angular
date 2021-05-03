@@ -9,7 +9,7 @@ import { CropperComponent } from 'angular-cropperjs';
   encapsulation: ViewEncapsulation.None
 })
 export class AntdComponent implements OnInit {
-  @ViewChild('angularCropper') public angularCropper: CropperComponent;
+  @ViewChild('angularCropper') angularCropper: CropperComponent;
   title = 'start';
   selectedValue = null;
   listOfOption: string[] = [];
@@ -22,8 +22,9 @@ export class AntdComponent implements OnInit {
   imageUrl: string = 'assets/images/cat.jpg';
   config: any = {
     viewMode: 2,
-    zoom: 2
+    zoomable: true
   };
+  resultCrop: string = '';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -60,9 +61,30 @@ export class AntdComponent implements OnInit {
     }
   }
 
-  zoom() {
-    console.log(this.angularCropper);
+  crop() {
+    this.angularCropper.cropper
+      .getCroppedCanvas({
+        imageSmoothingEnabled: false,
+        imageSmoothingQuality: 'high'
+      })
+      .toBlob(
+        blob => {
+          const reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onload = () => {
+            this.resultCrop = reader.result as string;
+          };
+        },
+        'image/jpeg',
+        0.95
+      );
+  }
 
-    this.angularCropper.cropper.zoom(3);
+  zoom() {
+    this.angularCropper.cropper.zoom(0.1);
+  }
+
+  rotate() {
+    this.angularCropper.cropper.rotate(-45);
   }
 }

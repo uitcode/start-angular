@@ -1,6 +1,7 @@
 <div class="m-10 h-full">
-  <button nz-button nzType="primary" class="mr-5" (click)="zoom()">Primary Button</button>
-  <button nz-button nzType="primary" class="mr-5" nzGhost>Primary Ghost</button>
+  <button nz-button nzType="primary" class="mr-5" (click)="zoom()">Zoom</button>
+  <button nz-button nzType="primary" class="mr-5" (click)="rotate()" nzGhost>Rotate</button>
+  <button nz-button nzType="primary" class="mr-5" (click)="crop()">Crop</button>
   <nz-button-group>
     <button nz-button>DropDown</button>
     <button nz-button nz-dropdown [nzDropdownMenu]="menu1" nzPlacement="bottomRight">
@@ -14,7 +15,7 @@
       <li nz-menu-item>menu1 3rd menu item</li>
     </ul>
   </nz-dropdown-menu>
-  <div class="ww mt-5">
+  <div class="ww mt-5" *ngIf="imageUrl">
     <angular-cropper
       class="w-80"
       #angularCropper
@@ -22,6 +23,9 @@
       [imageUrl]="imageUrl"
     ></angular-cropper>
   </div>
+  <section class="w-80" *ngIf="resultCrop">
+    <img [src]="resultCrop" />
+  </section>
   <div class="mt-4">
     <!-- <nz-select
       nzShowSearch
